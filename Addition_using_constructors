@@ -1,0 +1,32 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+class Testing
+{ 
+    public:
+        int sum, num1, num2;
+        Testing(int a, int b)
+        { 
+           num1=a;
+           num2=b;
+        }
+        int add();
+        void display();
+        
+};
+
+int Testing::add()
+{
+    return sum= num1+num2;
+}
+void Testing :: display()
+{
+    cout<<" The sum of the numbers is: " << sum;
+}
+    
+int main()
+{
+    Testing T(10,20);
+    T.add();
+    T.display();
+}
