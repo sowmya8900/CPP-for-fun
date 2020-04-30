@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+class student
+{
+    protected:
+        int roll_no;
+    public:
+        
+        void roll(int a)
+        {
+            roll_no=a;
+            cout<<"roll number= "<<roll_no;
+        }
+};
+class test : public student
+{
+    protected:
+        int part1=0, part2=0;
+    public:
+        void test_scores(int x, int y)
+            {
+                part1=x;
+                part2=y;
+                cout<<"\nThe test scores in part1 and 2 are: "<<part1<<"\t"<<part2;
+            }
+};
+class sports
+{
+    protected:
+        int scores=0;
+    public:
+        void sports_score(int z)
+        {
+            scores= z;
+            cout<<"\nThe sports score is: "<<scores;
+        }
+};
+class result : public test, public sports
+{
+    protected:
+        int total=0;
+    public:
+        void final()
+        {
+             total= part1+part2+scores;
+             cout<<"\nthe total score of the student is: \n"<<total;
+        }
+        
+};
+
+int main()
+{
+    result R;
+    R.roll(1234);
+    R.test_scores(80,90);
+    R.sports_score(100);
+    R.final();
+
+}
